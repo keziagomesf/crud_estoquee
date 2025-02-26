@@ -4,7 +4,7 @@
 
               
 body {
-  background-color: #ffffff;
+  background-color: #F5F5F7;
   padding: 30px;
   color: #333;
   font-family: 'Roboto', sans-serif;
@@ -14,7 +14,7 @@ body {
   min-width: 60%;
   max-width: 95%;
   margin: 0 auto 300px;
-  background-color: #F5F5F7;
+  background-color: #FFFFFF;
   padding: 20px 30px;
   border-radius: 10px;
   font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', sans-serif;

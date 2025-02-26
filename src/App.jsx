@@ -11,7 +11,7 @@ function App() {
       name: "Iphone 16 Pro", 
       category: "Iphone", 
       price: "10,499", 
-      image: "../img/iphone16pro.jpg", 
+      image: "/crud_estoquee/img/iphone16pro.jpg", 
       description: "6,9 ou 6,3 pol."
     },
     { 
@@ -19,7 +19,7 @@ function App() {
       name: "Iphone 16", 
       category: "Iphone", 
       price: "7,799", 
-      image: "/img/iphone16.jpg", 
+      image: "/crud_estoquee/img/iphone16.jpg", 
       description: "6,7 pol. ou 6,1 pol"
     },
     { 
@@ -27,7 +27,7 @@ function App() {
       name: "MacBook Air", 
       category: "Mac", 
       price: "12,499", 
-      image: "../img/macbookair.png", 
+      image: "/crud_estoquee/img/macbookair.png", 
       description: "CPU de 8 núcleos, GPU de 8 núcleos. Memória de 16 GB. SSD de 256 GB"
     },
     { 
@@ -35,7 +35,7 @@ function App() {
       name: "MacBook Pro", 
       category: "Mac", 
       price: "19,999", 
-      image: "../img/macbookpro.png", 
+      image: "/crud_estoquee/img/macbookpro.png", 
       description: "CPU de 10 núcleos. GPU de 10 núcleos. Memória de 16 GB. SSD de 512 GB"
     }
   ]);
