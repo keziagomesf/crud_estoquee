@@ -28,11 +28,10 @@ function ItensForm({addItens}) {
     const handlePriceChange = (e) => {
         let rawValue = e.target.value.replace(/\D/g, "");
         if (!rawValue) { 
-            setPrice(""); // Se estiver vazio, limpa o campo
+            setPrice(""); 
             return;
           }
-
-        let numericValue = Number(rawValue) / 100; // Converte para número real
+        let numericValue = Number(rawValue) / 100; 
         let formattedPrice = numericValue.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",

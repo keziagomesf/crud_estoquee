@@ -5,21 +5,34 @@ function Modal({isOpen, onClose, itens, updatedProduct}) {
     const [newCategory, setNewCategory] = useState("");
     const [newPrice, setNewPrice] = useState("");
     const [newDescription, setNewDescription] = useState("");
+    const[newImage, setNewImage] = useState("");
 
     useEffect(() => {
         if(itens) {
             setNewName(itens.name);
             setNewCategory(itens.category);
-            setNewPrice (itens.price ?? "");
+            setNewPrice (itens.price);
             setNewDescription(itens.description);
+            setNewImage(itens.image);
         }
     }, [itens])
 
     if (!isOpen) return null;
 
     const handleUpdated = () => {
-        updatedProduct(itens.id, newName, newCategory, newPrice, newDescription);
+        updatedProduct(itens.id, newName, newCategory, newPrice, newDescription, newImage);
     };
+    
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+      
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setNewImage(reader.result); 
+        };
+        reader.readAsDataURL(file);
+      };
   return (
     <div style={styles.overlay} onClick={onClose}>
         <div 
@@ -44,6 +57,14 @@ function Modal({isOpen, onClose, itens, updatedProduct}) {
         type="text" 
         value={newDescription} 
         onChange={(e) => setNewDescription(e.target.value)} />
+        <input 
+        type="file"
+        accept='image/*'
+        id="fileInput"
+        onChange={handleImageUpload}
+        className='input-img'
+        required
+         />
         <button onClick={handleUpdated}>Salvar alterações</button>
         <button onClick={onClose}>Cancelar</button>
         </div>

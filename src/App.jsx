@@ -10,7 +10,7 @@ function App() {
       id: 11, 
       name: "Iphone 16 Pro", 
       category: "Iphone", 
-      price: "10,499", 
+      price: "R$10,499", 
       image: "/crud_estoquee/img/iphone16pro.jpg", 
       description: "6,9 ou 6,3 pol."
     },
@@ -18,7 +18,7 @@ function App() {
       id: 22, 
       name: "Iphone 16", 
       category: "Iphone", 
-      price: "7,799", 
+      price: "R$7,799", 
       image: "/crud_estoquee/img/iphone16.jpg", 
       description: "6,7 pol. ou 6,1 pol"
     },
@@ -26,7 +26,7 @@ function App() {
       id: 33, 
       name: "MacBook Air", 
       category: "Mac", 
-      price: "12,499", 
+      price: "R$12,499", 
       image: "/crud_estoquee/img/macbookair.png", 
       description: "CPU de 8 núcleos, GPU de 8 núcleos. Memória de 16 GB. SSD de 256 GB"
     },
@@ -34,7 +34,7 @@ function App() {
       id: 44, 
       name: "MacBook Pro", 
       category: "Mac", 
-      price: "19,999", 
+      price: "R$19,999", 
       image: "/crud_estoquee/img/macbookpro.png", 
       description: "CPU de 10 núcleos. GPU de 10 núcleos. Memória de 16 GB. SSD de 512 GB"
     }
@@ -44,8 +44,13 @@ function App() {
   const [openModal, setOpenModal] = useState(false);
 
   const addItens = (name, category, price, image, description) => {
-    setItens([...itens, { id: Date.now(), name, category, price, image, description }]);
+    const id = Date.now() % 10000; 
+    setItens([
+      ...itens,
+      { id, name, category, price, image, description }
+    ]);
   };
+  
 
   const startEditProducts = (itens) => {
     setEditProducts(itens);
@@ -56,10 +61,10 @@ function App() {
     setItens(itens.filter(item => item.id !== id));
   };
 
-  const updatedProduct = (id, name, category, price, description) => {
+  const updatedProduct = (id, name, category, price, description, image) => {
     setItens((prevItens) =>
       prevItens.map((item) =>
-          item.id === id ? { ...item, name, category, price, description } : item
+          item.id === id ? { ...item, name, category, price, description,image } : item
       ))
     setOpenModal(false);
   }
